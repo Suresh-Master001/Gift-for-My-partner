@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes!!!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- preloader start -->
+    <div class="preloader"></div>
+    <!-- preloader end -->
+
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="bg-music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <h1 class="fade-in">Happy Birthday, My Lovely Soulmate! 🎉</h1>
+        <p class="fade-in">Today, the world became more beautiful because you were born.</p>
+        <a href="#love-letter" class="btn glow">Read My Lovely wishes 💌</a>
+    </section>
+
+    <!-- Floating Hearts Animation -->
+    <div class="hearts"></div>
+
+    <!-- Letter -->
+    <section id="letter" class="letter fade-in">
+        <h2>💌 My Heartfelt wishes</h2>
+        <p>Wishing you a day filled with joy, love, and all the success you deserve. 
+            You are strong, talented, and capable of achieving anything you set your heart on. 
+            Keep believing in yourself, chasing your dreams, and shining brightly. 
+            May this year bring endless opportunities and happiness your way!
+        </p>
+        <p> - 💞Your Soul</p>
+    </section>
+
+    <!-- Memory Lane -->
+    <section class="memory fade-in">
+        <h2>🌟 Your Future Moments Always</h2>
+        <div class="gallery">
+            <img src="emoji1.png" alt="Happiness" height="150px" width="150px">
+        </div>
+    </section>
+
+    <!-- Virtual Gift -->
+    <section class="gift fade-in">
+        <h2>🎁 A Special Surprise</h2>
+        <button class="btn glow" onclick="revealGift()">Decode My Status 🎀</button>
+        <section id="gift-message" class="hidden">
+            <textarea id="userMessage" placeholder="Write your birthday wish..."></textarea><br>
+            <button class="btn glow" onclick="decryptMessage()">See My Wish!!!</button>
+            <section id="gift-messages" class="hidden">
+                <textarea id="result" readonly></textarea><br>
+            </section>
+        </section>
+    </section>
+
+</body>
+</html>

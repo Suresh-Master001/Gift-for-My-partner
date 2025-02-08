@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wishes!!!</title>
+  <style>
+    /* ============================= */
+    /* Global Reset and Body Styles */
+    /* ============================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ============================= */
+    /* Preloader Container */
+    /* ============================= */
+    #preloader {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ============================= */
+    /* Custom Logo Section */
+    /* ============================= */
+    .logo {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from {
+        box-shadow: 0 0 10px rgb(255, 0, 140);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(255, 98, 195, 0.9);
+      }
+    }
+
+    /* ============================= */
+    /* Circular Animation Around Logo */
+    /* ============================= */
+    .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px dashed rgb(255, 0, 157);
+      animation: rotate 3s linear infinite;
+    }
+
+    .circle span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ff00d4;
+      border-radius: 50%;
+      animation: orbit 3s linear infinite;
+    }
+
+    .circle span:nth-child(1) { top: 0; left: 50%; }
+    .circle span:nth-child(2) { top: 50%; right: 0; }
+    .circle span:nth-child(3) { bottom: 0; left: 50%; }
+    .circle span:nth-child(4) { top: 50%; left: 0; }
+
+    @keyframes rotate {
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @keyframes orbit {
+      0% { transform: translateY(-50%); }
+      100% { transform: translateY(100%); }
+    }
+
+    /* ============================= */
+    /* Dynamic Loading Text */
+    /* ============================= */
+    .loading-text {
+      margin-top: 220px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeText 6s infinite;
+    }
+
+    @keyframes fadeText {
+      0%, 33% { opacity: 1; content: "Connecting Ideas..."; }
+      34%, 66% { opacity: 1; content: "Unleashing Potential..."; }
+      67%, 100% { opacity: 1; content: "Building Knowledge..."; }
+    }
+
+   
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="Main.jpeg" class="logo">
+    </div>
+
+    <!-- Rotating Circle -->
+    <div class="circle">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Loading Text -->
+    <p class="loading-text">Welcome...</p>
+
+    <!-- Particle Effects -->
+    <div class="particles">
+      <!-- Random particles -->
+      <div></div><div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div><div></div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loadingText = document.querySelector(".loading-text");
+      const messages = ["Welcome...", "Birthday Baby...", "Let's Go..."];
+      let index = 0;
+
+      // Change dynamic text every 2 seconds
+      setInterval(() => {
+        index = (index + 1) % messages.length;
+        loadingText.textContent = messages[index];
+      }, 2000);
+
+      // Simulate content loading and fade-out
+      setTimeout(() => {
+        document.getElementById("preloader").classList.add("fade-out");
+      }, 5000); // Adjust loading duration as needed
+    });
+    
+    // Redirect to the home page after 8 seconds (or adjust the time as needed)
+setTimeout(() => {
+  window.location.href = "home.html"; // Change to your desired URL
+}, 5500); // 8000 milliseconds = 8 seconds
+  </script>
+</body>
+</html>
